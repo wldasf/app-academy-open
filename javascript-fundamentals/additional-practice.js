@@ -70,3 +70,43 @@ function myIndexOf(arr, target) {
     }
     return -1;
 }
+
+/*
+Write a function twoSum(arr, target) that accepts an array and a target number as args. The function should a return a boolean indicating if two distinct numbers of the array add up to the target value. You can assume that input array contains only unique numbers.
+*/
+function twoSum(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let y = i + 1; y < arr.length; y++) {
+            if (arr[i] + arr[y] === target) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+/*
+Write a function fizzBuzz(max) that accepts a number as an arg. The function should return an array containing all positive numbers less than max that are divisible by either 3 or 5, but not both.
+*/
+function fizzBuzz(max) {
+    let result = [];
+    for (let i = 1; i < max; i++) {
+        if ((i % 3 == 0 || i % 5 == 0) && !(i % 3 == 0 && i % 5 == 0)) {
+            result.push(i);
+        }
+    }
+    return result;
+}
+
+/*
+Write a function removeLastVowel(word) that takes in a string and returns the string with its last vowel removed.
+*/
+function removeLastVowel(word) {
+    let vowels = "aeiou";
+    for (let i = word.length; i >= 0; i--) {
+        if (vowels.includes(word[i])) {
+            return word.slice(0, i) + word.slice(i + 1);
+        }
+    }
+    return word;
+}

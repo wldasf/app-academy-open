@@ -99,3 +99,24 @@ function matrixAddition(mat1, mat2) {
     }
     return sum;
 }
+
+/*
+Write a function pyramidArray(base) that takes in an array of numbers representing the base of a pyramid. The function should return a two-dimensional array representing the completed pyramid. To generate an element of the next level of the pyramid, we sum the elements below and to the left and below and to the right.
+*/
+let pyramidArray = function(base) {
+    let pyramid = [base];
+    while (pyramid.length < base.length) {
+        let something = adjacentSums(pyramid[0]);
+        pyramid.unshift(something);
+    }
+    return pyramid;
+}
+
+let adjacentSums = function(num) {
+    let x = [];
+    for (let i = 0; i < num.length - 1; i++) {
+        let y = num[i] + num[i + 1];
+        x.push(y);
+    }
+    return x;
+}

@@ -1,0 +1,16 @@
+/*
+Advanced array looping functions include:
+
+Array.forEach()
+Given an array, forEach iterates through the contents and does stuff with it based on what is specified in the brackets. Often you can just create a function inside.
+
+Array.map()
+Does something similar to forEach where it does stuff with an array, but map expects a return value from the function it is working with, while forEach does not.
+
+Array.filter()
+filter allows to make the code more concise by replacing for loop and an if statement in the case you want to filter an output from the array.
+
+Array.reduce(<callback function>, initialValue)
+reduce can be used to reduce the elements of an array to a single element, whether it's through summing all numbers in the array, or choosing the longest word in a sentence, etc.
+
+

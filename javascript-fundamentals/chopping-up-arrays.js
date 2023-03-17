@@ -58,7 +58,7 @@ function nonVowelRepeat(word) {
     const vowels = "aeiou";
     for (let i = word.length; i >= 0; i--) {
         if (vowels.includes(word[i])) {
-            return word.slice(0, i) + word.slice(i, word.length + 1) + word.slice(i, word.length + 1);
+            return word + word.slice(i);
         }
     }
 }

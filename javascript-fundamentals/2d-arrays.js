@@ -99,4 +99,3 @@ function matrixAddition(mat1, mat2) {
     }
     return sum;
 }
-

@@ -12,7 +12,18 @@ console.log(stringConverter("raccoon")); // => {r: 1, a: 1, c: 2, o: 2, n: 1}
 ***********************************************************************/
 
 function stringConverter(string) {
-  // Your code here
+  let obj = {};
+  let splitString = string.split("");
+  for (let i = 0; i < splitString.length; i++) {
+    let key = splitString[i];
+    if (key in obj) {
+      obj[key] += 1;
+    }
+    else {
+      obj[key] = 1;
+    }
+  }
+  return obj;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

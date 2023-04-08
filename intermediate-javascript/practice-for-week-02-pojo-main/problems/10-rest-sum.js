@@ -10,7 +10,11 @@ restSum(0); // => 0
 ***********************************************************************/
 
 function restSum(...otherNums) {
-  // Your code here
+  let sum = 0;
+  for (let i = 0; i < otherNums.length; i++) {
+    sum += otherNums[i];
+  }
+  return sum;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

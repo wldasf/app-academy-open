@@ -1,4 +1,3 @@
-/*
 Advanced array looping functions include:
 
 Array.forEach()
@@ -12,5 +11,3 @@ filter allows to make the code more concise by replacing for loop and an if stat
 
 Array.reduce(<callback function>, initialValue)
 reduce can be used to reduce the elements of an array to a single element, whether it's through summing all numbers in the array, or choosing the longest word in a sentence, etc.
-
-

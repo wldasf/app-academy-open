@@ -5,4 +5,4 @@ for (let variable in obj) {
 }
 You iterate through an object using the for...in loop.
 
-
+A *callback* is accepting a function as an argument in another function.

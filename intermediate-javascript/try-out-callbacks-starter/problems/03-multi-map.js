@@ -20,10 +20,13 @@ let result3 = multiMap("hi", 5, function(s) {
 });
 console.log(result3); // hi!!!!!
 *******************************************************************************/
-
-let multiMap = function() {
-
-
+debugger
+let multiMap = function(value, n, cb) {
+  let nTimes = value;
+  for (let i = 0; i < n; i++) {
+    nTimes = cb(nTimes);
+  }
+  return nTimes;
 };
 
 

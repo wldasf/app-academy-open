@@ -31,6 +31,7 @@ console.log(chainMap(4, half, square));         // 4
 
 let chainMap = function() {
 
+
 };
 
 

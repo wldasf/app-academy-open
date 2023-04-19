@@ -46,13 +46,13 @@ let selectiveMap = function(arr, cb1, cb2) {
     let newArr = [];
     for (let i = 0; i < arr.length; i++) {
         let elem = arr[i];
-
         if (cb1(elem)) {
-
+            newArr.push(cb2(elem));
+        }
+        else {
+            newArr.push(elem);
         }
     }
-
-
     return newArr;
 };
 

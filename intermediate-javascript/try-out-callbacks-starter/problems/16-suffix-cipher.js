@@ -34,7 +34,6 @@ console.log(suffixCipher('incremental progress is very instrumental', cipher2));
 let suffixCipher = function(sentence, obj) {
     let newSentence = [];
     let splitSentence = sentence.split(" ");
-    for (let i = 0; i < )
 };
 
 

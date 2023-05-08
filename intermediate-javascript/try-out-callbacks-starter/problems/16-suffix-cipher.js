@@ -36,18 +36,9 @@ let suffixCipher = function(sentence, obj) {
     let splitSentence = sentence.split(" ");
     for (let i = 0; i < splitSentence.length; i++) {
         let word = splitSentence[i];
-        if (checkEnding(word) == true) {
-        }
+        console.log(word);
     }
-};
-
-let checkEnding = function (word) {
-    let suffix = ["tion", "ity", "er", "ness", "ism", "ment", "ant", "ship", "age", "ery"];
-    for (let i = 0; i < suffix.length; i++) {
-        if (word.endsWith(suffix[i])) {
-            return
-        }
-    }
+    return newSentence.join(" ");
 };
 
 

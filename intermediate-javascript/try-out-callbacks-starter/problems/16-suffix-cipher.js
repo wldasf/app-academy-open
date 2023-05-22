@@ -33,16 +33,32 @@ console.log(suffixCipher('incremental progress is very instrumental', cipher2));
 
 let suffixCipher = function(sentence, obj) {
     let newSentence = [];
-    let splitSentence = sentence.split(" ");
+    const splitSentence = sentence.split(" ");
     for (let i = 0; i < splitSentence.length; i++) {
         let word = splitSentence[i];
-        console.log(word);
+        let suffix = checkSuffix(word);
+        console.log(obj[suffix](word));
+        if (suffix !== undefined && obj.hasOwnProperty(suffix) && typeof obj[suffix] === 'function') {
+            console.log(`Processing word: ${word}`);
+            console.log(`Suffix: ${suffix}`);
+            console.log(`Callback function: ${obj[suffix]}`);
+            newSentence.push(obj[suffix](word));
+        }
+        else {
+            newSentence.push(word);
+        }
     }
     return newSentence.join(" ");
 };
 
-
-
+let checkSuffix = function(word) {
+    const suffix = ['tion', 'ity', 'er', 'ness', 'ism', 'ment', 'ant', 'ship', 'age', 'ery', 'ly', 'ize'];
+    for (let i = suffix.length - 1; i >= 0; i--) {
+        if (word.endsWith(suffix[i])) {
+            return suffix[i];
+        }
+    }
+}
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = suffixCipher;

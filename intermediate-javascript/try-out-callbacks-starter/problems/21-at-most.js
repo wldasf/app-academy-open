@@ -22,8 +22,16 @@ console.log(atMost(['boat', 'arc', 'cat', 'car', 'academy'], 1, startsWithA));  
 
 *******************************************************************************/
 
-let atMost = function() {
-
+let atMost = function(arr, maxNum, cb) {
+    for (let i = 0; i < arr.length; i++) {
+        let elem = arr.length;
+        if (elem <= maxNum) {
+            console.log(cb(elem));
+        //    if (cb(elem)) {
+        //     return true;
+        //    }
+        }
+    }
 };
 
 

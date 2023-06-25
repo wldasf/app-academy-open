@@ -19,7 +19,12 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 
 function sandwichMaker() {
   // Your code here
-
+  let strr = "One sandwich with tomato";
+  inner = (str) => {
+    strr += " and " + str;
+    return strr;
+  }
+  return inner;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

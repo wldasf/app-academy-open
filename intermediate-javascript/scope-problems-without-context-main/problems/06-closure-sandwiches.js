@@ -19,10 +19,7 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 
 function sandwichMaker() {
   // Your code here
-  function sandwich(word) {
-    console.log(word);
-  }
-  return sandwich();
+
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

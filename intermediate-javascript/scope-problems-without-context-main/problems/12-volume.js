@@ -24,11 +24,16 @@ console.log(table2(75)); // STILL prints 6
 
 ***********************************************************************/
 function recVolume(height) {
-  return function (length) {
-    return function (width) {
-      return height * length * width;
+  let volume = height;
+  let counter = 0;
+
+  return function (dimension) {
+    counter++;
+    if (counter <= 2) {
+      volume *= dimension;
     }
-  }
+    return volume;
+  };
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

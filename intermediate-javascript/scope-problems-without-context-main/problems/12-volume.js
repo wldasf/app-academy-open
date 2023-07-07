@@ -28,12 +28,12 @@ function recVolume(height) {
   let counter = 0;
 
   return function (dimension) {
-    counter++;
+    console.log(counter++);
     if (counter <= 2) {
       volume *= dimension;
     }
     return volume;
-  };
+  }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

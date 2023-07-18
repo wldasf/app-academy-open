@@ -16,6 +16,10 @@ function range(start, end) {
   if (end < start) {
     return [];
   }
+  if (start === end - 1) {
+    return [start];
+  }
+  return [start].concat(range(start + 1, end));
 }
 
 

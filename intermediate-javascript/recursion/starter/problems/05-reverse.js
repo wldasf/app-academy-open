@@ -13,6 +13,17 @@ reverse(""); // ""
 ***********************************************************************/
 
 // your code here
+function reverse(string) {
+  let word = "";
+  if (string.length === 0) {
+    return "";
+  }
+  word += string[string.length - 1];
+  if (string.length === word.length) {
+    return word;
+  }
+  return reverse(string);
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

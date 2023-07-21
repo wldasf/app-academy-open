@@ -13,6 +13,20 @@ addToTwelve([1]); // false
 ***********************************************************************/
 
 // your code here
+function addToTwelve(array) {
+  let copy = array;
+  console.log(array[0], array[1]);
+  if (array[0] < array[1]) {
+
+    if (array[1] - 1 === array[0]) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  return addToTwelve(array.shift());
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {

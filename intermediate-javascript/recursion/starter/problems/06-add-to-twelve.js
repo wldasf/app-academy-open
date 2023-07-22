@@ -14,18 +14,16 @@ addToTwelve([1]); // false
 
 // your code here
 function addToTwelve(array) {
-  let copy = array;
-  console.log(array[0], array[1]);
-  if (array[0] < array[1]) {
-
-    if (array[1] - 1 === array[0]) {
-      return true;
-    }
-    else {
-      return false;
-    }
+  if (array.length === 1 || array.length === 0) {
+    return false;
   }
-  return addToTwelve(array.shift());
+  if (array[0] + array[1] === 12) {
+    return true;
+  }
+  else {
+    array.shift();
+    return addToTwelve(array);
+  }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

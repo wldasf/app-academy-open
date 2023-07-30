@@ -12,9 +12,12 @@ flatten([1, [2, [3]]]); // [1, 2, 3]
 
 // your code here
 function flatten(array) {
-
+if (array.length === 0) {
+  return [];
 }
-  
+return flatten()
+}
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = flatten;

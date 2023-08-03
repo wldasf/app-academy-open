@@ -22,7 +22,6 @@ sort([]); // []
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-  // your code here
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

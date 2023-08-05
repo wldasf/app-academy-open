@@ -21,7 +21,19 @@ sort([0, 1, -3]); // [-3, 0, 1]
 sort([]); // []
 ***********************************************************************/
 
-function sort(nums, sorted = []) {
+function sort(nums) {
+  let sorted = [];
+  if (nums.length == 0) {
+    return sorted;
+  }
+  let current = nums[0];
+  let i = 1;
+  if (nums[i] <= current) {
+    sorted.push(current);
+    current = nums[i];
+    i++;
+  }
+  return sort();
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

@@ -21,19 +21,23 @@ sort([0, 1, -3]); // [-3, 0, 1]
 sort([]); // []
 ***********************************************************************/
 
-function sort(nums) {
-  let sorted = [];
-  if (nums.length == 0) {
+function sort(nums, sorted = []) {
+  if (nums.length === 0) {
     return sorted;
   }
-  let current = nums[0];
-  let i = 1;
-  if (nums[i] <= current) {
-    sorted.push(current);
-    current = nums[i];
-    i++;
+
+  let smallestIndex = 0;
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] < nums[smallestIndex]) {
+      smallestIndex = i;
+    }
   }
-  return sort();
+
+  sorted.push(nums[smallestIndex]);
+
+  nums.splice(smallestIndex, 1);
+
+  return sort(nums, sorted);
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/

@@ -19,5 +19,8 @@ First class object: is any type that supports the same basic operations as other
 Functions can also be first class objects by using callback. 
 
 Higher order function: having a function (function expression) nested in another function.
+---------------------------------------
+synchronous code is code where the order of execution is guaranteed.
 
+asynchronous code is where there's no guarantee in the order of commands execution.
 

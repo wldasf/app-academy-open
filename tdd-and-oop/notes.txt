@@ -1,0 +1,11 @@
+OOP was like the industrial revolution, according to steve jobs.
+
+OOP makes things scalable, organized, and modular.
+
+reminder of polya's problem solving framework:
+1. understand the problem.
+2. come up with a plan.
+3. execute the plan.
+4. revisit and refactor your solution.
+
+

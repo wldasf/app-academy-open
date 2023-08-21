@@ -33,31 +33,35 @@ const recipes = {
 /* DO NOT CHANGE THE CODE ABOVE */
 
 /*************************** FUNCTION TO REFACTOR ****************************/
-function bakeAndSellPies(pieType, pieQuantity, profitMargin) {
-  // Find the recipe for the pieType specified
-  const recipe = recipes[pieType];
-  // Bake the number of pies specified by the pieQuantity
-  for (let i = 0; i < pieQuantity; i++) {
-    // Print the ingredients for each ingredient in the recipe
-    let combiningMsg = `Combining ingredients for ${pieType}: `
-    combiningMsg += recipe.map(ingredient => ingredient.name).join(', ');
-    console.log(combiningMsg);
+// Extracted a separate function to get the ingredients as a string
+function getIngredientsString(recipe) {
+  return recipe.map(ingredient => ingredient.name).join(', ');
+}
 
-    // Print the nth pie that was baked
+// Extracted a separate function to compute the cost of a single pie
+function computeCostOfPie(recipe) {
+  return recipe.reduce((prev, current) => prev + current.cost, 0);
+}
+
+
+// Refactored the main function
+function bakeAndSellPies(pieType, pieQuantity, profitMargin = 1.2) {
+  const recipe = recipes[pieType];
+
+  // Bake pies
+  for (let i = 0; i < pieQuantity; i++) {
+    const combiningMsg = `Combining ingredients for ${pieType}: ${getIngredientsString(recipe)}`;
+    console.log(combiningMsg);
     console.log(`Baked pie ${i + 1}!`);
   }
 
-  // Print the cost of each pie based on the cost of each ingredient
-  const costOfPie = recipe.reduce((prev, current) => {
-    return prev + current.cost;
-  }, recipe[0].cost);
+  // Compute cost and revenue
+  const costOfPie = computeCostOfPie(recipe);
   console.log(`Cost per pie: ${costOfPie}`);
 
-  // Calculate the total cost of all the pies
   const totalCost = costOfPie * pieQuantity;
+  const revenue = totalCost * profitMargin;
 
-  // Print the total revenue calculated using the given profitMargin
-  const revenue = totalCost * (profitMargin || 1.2);
   console.log(`Sold ${pieQuantity} pies for $${revenue.toFixed(2)}!`);
 }
 

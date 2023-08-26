@@ -1,3 +1,4 @@
+const { cp } = require('fs');
 const readline = require('readline');
 
 /********************************* CONSTANTS *********************************/
@@ -35,27 +36,33 @@ function printHelp() {
 
 function getWinner(move1, move2) {
   if (move1 === move2) {
+    console.log("You tie.\n");
+    ties++;
     return 0;
   }
-
-  switch (move1) {
-      case 'r':
-        return (move2 === 's') ? 1 : -1;
-      case 's':
-        return (move2 === 'p') ? 1 : -1;
-      case 'p':
-        return (move2 === 'r') ? 1 : -1;
-      default:
-        throw new Error("Invalid move");
+  else if (VALID_MOVES[move1].winsAgainst === move2) {
+    console.log("You win!\n");
+    wins++;
+    return 1;
+  }
+  else {
+    console.log("You lose...\n");
+    losses++;
+    return -1;
   }
 }
 
 function getCPUMove() {
   // Your code here
+  const validMoveKeys = Object.keys(VALID_MOVES);
+  const randomIndex = Math.floor(Math.random() * validMoveKeys.length);
+  return validMoveKeys[randomIndex];
 }
 
 function processMove(cmd, cpu) {
   // Your code here
+  console.log(`You pick ${cmd}, computer picks ${cpu}.`);
+  getWinner(cmd, cpu);
 }
 
 /******************************* MAIN FUNCTION *******************************/
@@ -63,7 +70,6 @@ function promptInput(rl) {
   console.log(`${wins} wins - ${losses} losses - ${ties} ties`);
   rl.question('> ', (cmd) => {
     cmd = cmd.toLowerCase();
-
     if (cmd === 'h') {
       console.log("\nHelp:\n");
       printHelp();
@@ -71,32 +77,11 @@ function promptInput(rl) {
       rl.close();
       return;
     } else if (VALID_MOVES[cmd]){
-      const validMoveKeys = Object.keys(VALID_MOVES);
-      const randomIndex = Math.floor(Math.random() * validMoveKeys.length);
-      const cpu = validMoveKeys[randomIndex];
-
-      console.log(`You pick ${cmd}, computer picks ${cpu}.`);
-
-      if (cmd === cpu) { // tie
-        console.log("You tie.\n");
-        ties++;
-      }
-      else if (VALID_MOVES[cmd].winsAgainst === cpu) { // win
-        console.log("You win!\n");
-        wins++;
-      } else { // loss
-        console.log("You lose...\n");
-        losses++;
-      }
+      processMove(cmd, getCPUMove());
     } else {
       console.log("\nInvalid command.\n");
-      console.log("  Type 'r' for Rock");
-      console.log("  Type 'p' for Paper");
-      console.log("  Type 's' for Scissors");
-      console.log("  Type 'q' to quit");
-      console.log("  Type 'h' for a list of valid commands\n");
+      printHelp();
     }
-
     promptInput(rl);
   });
 }

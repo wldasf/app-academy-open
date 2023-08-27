@@ -10,4 +10,20 @@ reminder of polya's problem solving framework:
 
 Encapsulation: hiding the complexity of an object. using that object without knowing how it works.
 
+a public object can be accessed by other objects.
+
+a private object can only be accessed by its own object.
+
+a class is a framework (a blueprint) that specifies an object with properties and methods.
+
+properties (data) // methods (actions).
+
+a class is just a framework until it is instantiated. instantiated similar to how a function is just a function framework until it is called.
+
+an object made from a class is called an instance.
+
+the device used to read the article i am taking notes of is an instance of the class Computer.
+
+when a class is instantiated, properties and methods need to be set right away. a special method called a constructor handles that for us.
+
 

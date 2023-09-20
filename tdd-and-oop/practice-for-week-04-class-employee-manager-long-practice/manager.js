@@ -6,22 +6,28 @@ class Manager extends Employee{
         this.employees = employees;
     }
 
-    _totalSubSalary() {
+    _totalSubSalary(visitedEmployees = new Set()) {
         let sum = 0;
         for (const employee of this.employees) {
+            if (visitedEmployees.has(Manager)) {
+                continue;
+            }
+
+            visitedEmployees.add(employee);
+
             if (employee instanceof Manager) {
-                sum += this.salary + this._totalSubSalary;
+                sum += employee.salary + employee._totalSubSalary(visitedEmployees);
             }
             else {
-                sum += this.salary;
+                sum += employee.salary;
             }
         }
         return sum;
     }
 
     calculateBonus(multiplier) {
-        let total = this.salary + this._totalSubSalary();
-        return total * multiplier;
+        let totalSub = this._totalSubSalary();
+        return (this.salary + totalSub) * multiplier;
     }
 
     addEmployee(employee) {

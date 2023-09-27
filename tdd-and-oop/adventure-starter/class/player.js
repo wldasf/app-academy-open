@@ -48,8 +48,8 @@ class Player {
     }
 
     getItemByName(name) {
-
-        // Fill this in
+        const item = this.items.find(item => item.name === name);
+        return item || null;
     }
 }
 

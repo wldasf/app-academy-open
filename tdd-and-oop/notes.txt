@@ -8,7 +8,7 @@ reminder of polya's problem solving framework:
 3. execute the plan.
 4. revisit and refactor your solution.
 
-Encapsulation: hiding the complexity of an object. using that object without knowing how it works.
+Encapsulation: hiding the complexity of an object. using that object without knowing what it is doing with the data.
 
 a public object can be accessed by other objects.
 

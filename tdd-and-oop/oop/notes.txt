@@ -10,6 +10,8 @@ reminder of polya's problem solving framework:
 
 Encapsulation: hiding the complexity of an object. using that object without knowing what it is doing with the data.
 
+Encapsulation is to put the behavior and data together behind an API that hides the implementation details.
+
 a public object can be accessed by other objects.
 
 a private object can only be accessed by its own object.

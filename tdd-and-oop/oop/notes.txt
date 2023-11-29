@@ -22,6 +22,8 @@ properties (data) // methods (actions).
 
 a class is just a framework until it is instantiated. instantiated similar to how a function is just a function framework until it is called.
 
+properties are the data that methods (actions) work on.
+
 an object made from a class is called an instance.
 
 the device used to read the article i am taking notes of is an instance of the class Computer.
